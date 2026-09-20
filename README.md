@@ -1,25 +1,57 @@
-### What is this?
-This `README.md` file is auto-created for all new projects.
+# Enhanced Grep Command
 
-### Why am I here?
-This file opens automatically when you open a project. 
+## Command Description
 
-If you do not create Guides, this `README.md` will be what automatically opens for students. You can edit this file by clicking on the pencil icon in the upper right corner.
+EnhancedGrep is a Node.js command-line tool that searches a file for a specific word or pattern. It prints every matching line and also shows the total number of matches.
 
-### How do I get started with Codio?
-Use this [Onboarding Guide](https://codio.com/home/starter-packs/2ae8501b-e5f7-4b07-8e9f-adb155fc6d10) for an interactive tutorial through the main features of Codio. Click on the link, click **Use Pack** and then click **Create** to add it to your projects.
+It extends the basic grep command by adding a match counter.
 
-### How do I close this file?
-At the top of your workspace you will see tabs for each open file. Click the x on the right hand side of the tab that says **README.md**.
-![readMeTab](https://global.codio.com/platform/readme.resources/readMeTab.png)
+This tool combines grep-style pattern searching with a counting feature that shows the total number of matches.
 
-### I expected to see or edit learning materials.
-Select **Tools->Guide->Play** to view the Guide for this project.
-![playGuide](https://global.codio.com/platform/readme.resources/playGuide.png)
+## How to Run
 
-Click on the **Open Guides Editor** icon to edit the Guide.
-![guideEdit](https://global.codio.com/platform/readme.resources/guideEdit.png)
+Syntax:
 
-### How do I delete this file?
-To delete this `README.md` file, right-click (ctrl-click on a Mac) on the file name in the file list.
-![fileTree](https://global.codio.com/platform/readme.resources/fileTree.png)
+node enhancedGrep.js <pattern> <filename>
+
+Example:
+
+node enhancedGrep.js ERROR server.log
+
+The program searches server.log for ERROR and prints all matching lines.
+
+Example result:
+
+Total matches: 23
+
+## Testing
+
+I tested the command with different patterns and edge cases.
+
+| Test | Expected Result | Actual Result |
+|---|---|---|
+| ERROR | 23 matches | 23 matches |
+| INFO | 77 matches | 77 matches |
+| WARNING | 0 matches | 0 matches |
+| Missing arguments | Show usage message | Usage message displayed |
+
+## Testing Reflection
+
+I tested the program with patterns that had many matches, no matches, and missing arguments. The tests helped me confirm that the command was working correctly. I also checked the output myself after running each command in the Codio terminal.
+
+## AI-Assisted Programming
+
+I used AI to help me understand how grep and head work and to explain errors I received while testing my programs. I also asked AI for ideas for test cases and edge cases.
+
+I made the changes in Codio, ran the commands myself, and checked whether the results were correct. One issue I found earlier was that my grep program printed the whole file instead of only matching lines, so I reviewed the code and corrected the logic.
+
+AI was useful for explanations and testing ideas, but I still had to understand the code, run the tests, and verify the results myself.
+
+## Test Screenshots
+
+Screenshots of the command running in Codio show:
+
+- ERROR pattern: 23 matches
+- INFO pattern: 77 matches
+- WARNING pattern: 0 matches
+- Missing arguments: usage message displayed
